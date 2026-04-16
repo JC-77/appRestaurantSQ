@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import api from '../services/api'
 import type  { MenuItem } from '../types/MenuItem'
 
 export default function Admin() {
-  const [menu, setMenu] = useState<MenuItem[]>([])
+  //const [menu, setMenu] = useState<MenuItem[]>([])
   const [form, setForm] = useState<Omit<MenuItem, 'id'>>({
     name: '',
     description: '',
@@ -11,23 +11,23 @@ export default function Admin() {
     imageUrl: ''
   })
 
-  const loadMenu = () => {
-    api.get<MenuItem[]>('/menu').then(res => setMenu(res.data))
-  }
+  // const loadMenu = () => {
+  //   api.get<MenuItem[]>('/menu').then(res => setMenu(res.data))
+  // }
 
-  useEffect(() => {
-    loadMenu()
-  }, [])
+  // useEffect(() => {
+  //   loadMenu()
+  // }, [])
 
   const handleSubmit = async () => {
     await api.post('/menu', form)
-    loadMenu()
+    //loadMenu()
   }
 
-  const handleDelete = async (id: number) => {
-    await api.delete(`/menu/${id}`)
-    loadMenu()
-  }
+  // const handleDelete = async (id: number) => {
+  //   await api.delete(`/menu/${id}`)
+  //   loadMenu()
+  // }
 
   return (
     <div className="container admin">
