@@ -27,7 +27,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_ISLAND_01D6DCB10 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/appRestaurantSQ" # ajusta según tu carpeta real
+          app_location: "/" # ajusta según tu carpeta real
           api_location: "" # vacío si no tienes API
           output_location: "build"
 
